@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  pool: 5
+  # these are our new parameters
+  encoding: UTF-8
+  database: eshop_development
+  host: localhost
+  username: monarch
+  password: monarch@123
+
+test:
+  # this won't work 
+  adapter: postgresql
+  encoding: unicode
+  database: eshop_test
+  pool: 5
+  username: monarch
+  password: monarch@123
+
+production:
+  # this won't work 
+  adapter: postgresql
+  encoding: unicode
+  database: eshop_production
+  pool: 5
+  username: monarch
+  password: monarch@123

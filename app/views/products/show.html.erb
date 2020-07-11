@@ -1,0 +1,42 @@
+<h2> Product Details </h2>
+
+<div class="col-md-12">
+  <div class="col-md-4 ">
+    <label>Name:</label>
+    <%= @product.name %>
+  </div>
+
+  <div class="col-md-4">
+    <strong>Brand name:</strong>
+    <%= @product.brand_name %>
+  </div>
+
+  <div class="col-md-4">
+    <strong>Colour:</strong>
+    <%= @product.colour %>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-4">
+    <strong>Image:</strong>
+    <%= image_tag @product.image.thumb.url %>
+  </div>
+  <div class="col-md-4">
+    <strong>Prize:</strong>
+    <%= @product.price %> 
+  </div>
+  <div class="col-md-4">
+    <strong>Size:</strong>
+    <%= @product.size %>
+  </div>
+</div>
+<div class="col-md-12">
+<div class="col-md-4">
+  <strong>Description:</strong>
+  <%= @product.description %>
+</div>  
+<div class="col-md-4">
+<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default" %>   
+<%= link_to 'Back', products_path, class: "btn btn-default" %>  
+</div>
+</div>

@@ -1,0 +1,49 @@
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card a {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: pink;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+</style>
+
+<h2 style="text-align:center">Products</h2>
+
+<% @products.each do |product|%>
+  <div class="col-md-4">
+    <div class="card" style="float: left; width: 100%;">
+     <img src='<%=product.image.thumb.url%>' alt="product image" style="width: 50%; align-self: center;">
+     <h4><%= product.name%></h4>
+     <p>&#8377;<%= product.price%></p>
+     <p><%= product.description%></p>
+     <p> <%= link_to '<i class="fa fa-eye"></i>'.html_safe, product ,title: "View product"%> || <%= link_to '<i class= "fa fa-pencil-square-o"></i>'.html_safe, edit_product_path(product), title: "Edit product" %> || <%= link_to '<i class= "fa fa-trash"></i>'.html_safe, product, title: "Delete product",method: :delete, data: { confirm: 'Are you sure?' } %>
+     </p>
+    </div>
+  </div>
+<%end%>
+    
+<div class="pagination">
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+</div>

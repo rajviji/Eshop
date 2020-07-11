@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eshop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body class="container">
+  <nav class="navbar navbar-expand-sm bg navbar " style="background-color: lightskyblue">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/#">
+    <img src="/assets/logo.png" alt="logo" style="width:46px;">
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <%= link_to 'Add Product', new_product_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Logout <i class="fa fa-sign-out"></i>'.html_safe, destroy_user_session_path, method: :delete, class: "nav-link", title: "Logout" %>
+    </li>
+  </ul>
+  </nav>
+   <p id="notice" style="color: green;"><%= notice %></p>
+   <p id="alert" style="color: green;"><%= alert %></p>
+
+  <%= yield %>
+</body>
+</html>
